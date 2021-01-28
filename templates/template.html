@@ -2,8 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="60">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LoL Witch</title>
+    <style>
+        p {
+            font-size: 6.2em;
+            font-weight: 500;
+            margin: 1px;
+            color: 
+            {{color}};
+        }
+    </style>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
 <body>
@@ -12,9 +22,10 @@
             <img src="{{url_for('static', filename=data.tier)}}" />
         </div>
         <div class="info">
-            <h1>Rank: {{data.rank}}</h1>
-            <h1>LP: {{data.leaguePoints}}</h1>
+            <p>Rank: {{data.rank}}</p>
+            <p>{{data.leaguePoints}} PDLs</p>
         </div>
     </div>
 </body>
+
 </html>

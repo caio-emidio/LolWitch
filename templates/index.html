@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="60">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoL Witch</title>
+</head>
+
+<body>
+    <form action="/rankedwitch">
+        <div>
+            <label for="summoner">Summoner</label>
+            <input name="summoner" type="text">
+        </div>
+        <div>
+            <label for="queue">Queue</label>
+            <select name="queue" id="queue">
+                <option value="RANKED_FLEX_SR">Flex</option>
+                <option value="RANKED_SOLO_5x5">Solo 5v5</option>
+                <option value="RANKED_TEAM_5x5">Team 5v5</option>
+            </select>
+        </div>
+        <div>
+            <label for="region">Region</label>
+            <select name="region" id="region">
+                <option value="BR1">Brasil</option>
+                <option value="EUN1">Europe Nordic & East</option>
+                <option value="EUW1">Europe West</option>
+                <option value="JP1">Japao</option>
+                <option value="KR">Korea</option>
+                <option value="LA1">Latin America</option>
+                <option value="LA2">Canada</option>
+                <option value="NA1">North America</option>
+                <option value="OC1">Oceania</option>
+                <option value="TR1">Turkey</option>
+                <option value="RU">Russia</option>
+            </select>
+        </div>
+        <div>
+            <label for="color">Color</label>
+            <input name="color" type="color" value="#ffffff">
+        </div>
+        <button>Go!</button>
+
+    </form>
+</body>
+
+</html>
