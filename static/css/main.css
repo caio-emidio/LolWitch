@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+}
+
+.lolwitch {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #0D579B;
+    color: #F7931A;
+    box-shadow: 0 0 10px 5px rgba(100, 100, 100, 0.1);
+    overflow: hidden;
+    max-width: 100%;
+    padding-right: 5%;
+    padding-left: 5%;
+}
