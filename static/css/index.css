@@ -12,6 +12,7 @@ body {
 
 .cabecalho {
     margin-bottom: 100px;
+
 }
 
 .container {
@@ -23,18 +24,21 @@ body {
     height: 100vh;
 }
 
-.formulario {
-
+.titulo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
-.titulo {
+#titulo {
     font-size: 48px;
 }
-.titulo:nth-child(2) {
+#titulo:nth-child(2) {
     font-weight: 700;
     color: #32D74B
 }
-.titulo:nth-child(3) {
+#titulo:nth-child(3) {
     font-weight: 700;
     color: #B01717
 }
