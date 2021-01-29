@@ -6,45 +6,70 @@
     <meta http-equiv="refresh" content="60">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LoL Witch</title>
+    <link rel="stylesheet" href="./../static/css/index.css">
+
 </head>
 
 <body>
-    <form action="/rankedwitch">
-        <div>
-            <label for="summoner">Summoner</label>
-            <input name="summoner" type="text">
-        </div>
-        <div>
-            <label for="queue">Queue</label>
-            <select name="queue" id="queue">
-                <option value="RANKED_FLEX_SR">Flex</option>
-                <option value="RANKED_SOLO_5x5">Solo 5v5</option>
-                <option value="RANKED_TEAM_5x5">Team 5v5</option>
-            </select>
-        </div>
-        <div>
-            <label for="region">Region</label>
-            <select name="region" id="region">
-                <option value="BR1">Brasil</option>
-                <option value="EUN1">Europe Nordic & East</option>
-                <option value="EUW1">Europe West</option>
-                <option value="JP1">Japao</option>
-                <option value="KR">Korea</option>
-                <option value="LA1">Latin America</option>
-                <option value="LA2">Canada</option>
-                <option value="NA1">North America</option>
-                <option value="OC1">Oceania</option>
-                <option value="TR1">Turkey</option>
-                <option value="RU">Russia</option>
-            </select>
-        </div>
-        <div>
-            <label for="color">Color</label>
-            <input name="color" type="color" value="#ffffff">
-        </div>
-        <button>Go!</button>
+    <div class="container">
+        <div class="org">
+            <div class="cabecalho">
+                <span class="titulo">LOL</span>
+                <span class="titulo">WITCH</span>
+                <span class="titulo">.</span>
+            </div>
 
-    </form>
+            <form class="formulario" action="/rankedwitch">
+                <div class="box">
+                    <div class="formDivInput">
+                        <label for="summoner">Summoner</label>
+                        <input class="formInput" name="summoner" type="text">
+                    </div>
+                    <div class="formDiv2">
+                        <div class="formDivInput">
+                            <label class="label" for="queue">Queue</label>
+                            <select class="formInput" name="queue" id="queue">
+                                <option value="RANKED_FLEX_SR">Flex</option>
+                                <option value="RANKED_SOLO_5x5">Solo 5v5</option>
+                                <option value="RANKED_TEAM_5x5">Team 5v5</option>
+                            </select>
+                        </div>
+                        <div class="formDivInput">
+                            <label for="region">Region</label>
+                            <select class="formInput region" name="region" id="region">
+                                <option value="BR1">Brasil</option>
+                                <option value="EUN1">Europe Nordic & East</option>
+                                <option value="EUW1">Europe West</option>
+                                <option value="JP1">Japan</option>
+                                <option value="KR">Korea</option>
+                                <option value="LA1">Latin America</option>
+                                <option value="LA2">Canada</option>
+                                <option value="NA1">North America</option>
+                                <option value="OC1">Oceania</option>
+                                <option value="TR1">Turkey</option>
+                                <option value="RU">Russia</option>
+                            </select>
+                        </div>
+                        <div class="formDivInput">
+                            <label for="color">Color</label>
+                            <input class="formInput color" name="color" type="color" value="#32D74B">
+                        </div>
+                    </div>
+                </div>
+
+                <button>Go!</button>
+
+            </form>
+
+        </div>
+
+        <footer>
+            <a href="https://www.twitch.tv/em1dio">Twitch: @Em1Dio</a>
+            <a href="http://github.com/caio-emidio/">Github: caio-emidio</a>
+        </footer>
+    </div>
+
+
 </body>
 
 </html>

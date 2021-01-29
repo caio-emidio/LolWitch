@@ -61,7 +61,10 @@ def define_map(response):
                 "tier": images[res["tier"]],
                 "rank": res["rank"],
                 "leaguePoints": res["leaguePoints"],
-                "percentWin": float(res["wins"] / res["wins"] + res["losses"])
+                "percentWin": float(res["wins"] / res["wins"] + res["losses"]),
+                "wins": res["wins"],
+                "loses": res["losses"]
+                
             }
         lista[res["queueType"]] = map
     return lista

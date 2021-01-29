@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;600;700&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    background-color: #1E1E1E;
+    color: #fff
+}
+
+.cabecalho {
+    margin-bottom: 100px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.formulario {
+
+}
+
+.titulo {
+    font-size: 48px;
+}
+.titulo:nth-child(2) {
+    font-weight: 700;
+    color: #32D74B
+}
+.titulo:nth-child(3) {
+    font-weight: 700;
+    color: #B01717
+}
+
+
+
+.formulario {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.formInput {
+    all:unset;
+    background-color: #3F3E3E;
+    height: 37px;
+    border-radius: 10px;
+    text-align:justify;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
+
+}
+
+.region{
+    width: 170px;
+}
+
+.formDiv2 {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.formDiv2 .formDivInput {
+    width: 33%;
+}
+
+.formDiv2 .formInput {
+    width: 100%;
+}
+
+.color {
+    height: 30px;
+    width: 91px;
+    padding: 5px;
+}
+
+.formDivInput label{
+    margin-bottom: 4px;
+}
+
+.formDivInput {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 10px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+ width: 100%;
+}
+
+button {
+    all: unset;
+    width: 214px;
+    height: 44px;
+    background-color:  #32D74B;
+    border-radius: 10px;
+    text-align:justify;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-top: 30px;
+}
+
+footer {
+    margin-top: 300px ;
+    justify-self: flex-end;
+}
+
+a {
+    margin: 10px;
+    color: white
+}
+
+.org {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
