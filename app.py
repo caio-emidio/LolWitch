@@ -19,16 +19,43 @@ links = {
 }
 
 images = {
-    "SILVER": "Emblem_Silver.png",
-    "PLATINUM": "Emblem_Platinum.png",
-    "MASTER": "Emblem_Master.png",
-    "IRON": "Emblem_Iron.png",
-    "GRANDMASTER": "Emblem_Grandmaster.png",
-    "GOLD": "Emblem_Gold.png",
-    "DIAMOND": "Emblem_Diamond.png",
-    "CHALLENGER": "Emblem_Challenger.png",
-    "BRONZE": "Emblem_Bronze.png",
-    "UNRANKED": "Emblem_Unranked.png",
+    "IRON_I": "imgs/Emblem_Iron_I.png",
+    "IRON_II": "imgs/Emblem_Iron_II.png",
+    "IRON_III": "imgs/Emblem_Iron_III.png",
+    "IRON_IV": "imgs/Emblem_Iron_IV.png",
+    "BRONZE_I": "imgs/Emblem_Bronze_I.png",
+    "BRONZE_II": "imgs/Emblem_Bronze_II.png",
+    "BRONZE_III": "imgs/Emblem_Bronze_III.png",
+    "BRONZE_IV": "imgs/Emblem_Bronze_IV.png",
+    "SILVER_I": "imgs/Emblem_Silver_I.png",
+    "SILVER_II": "imgs/Emblem_Silver_II.png",
+    "SILVER_III": "imgs/Emblem_Silver_III.png",
+    "SILVER_IV": "imgs/Emblem_Silver_IV.png",
+    "GOLD_I": "imgs/Emblem_Gold_I.png",
+    "GOLD_II": "imgs/Emblem_Gold_II.png",
+    "GOLD_III": "imgs/Emblem_Gold_III.png",
+    "GOLD_IV": "imgs/Emblem_Gold_IV.png",
+    "DIAMOND_I": "imgs/Emblem_Diamond_I.png",
+    "DIAMOND_II": "imgs/Emblem_Diamond_II.png",
+    "DIAMOND_III": "imgs/Emblem_Diamond_III.png",
+    "DIAMOND_IV": "imgs/Emblem_Diamond_IV.png",
+    "PLATINUM_I": "imgs/Emblem_Platinum_I.png",
+    "PLATINUM_II": "imgs/Emblem_Platinum_II.png",
+    "PLATINUM_III": "imgs/Emblem_Platinum_III.png",
+    "PLATINUM_IV": "imgs/Emblem_Platinum_IV.png",
+    "MASTER_I": "imgs/Emblem_Master_I.png",
+    "MASTER_II": "imgs/Emblem_Master_II.png",
+    "MASTER_III": "imgs/Emblem_Master_III.png",
+    "MASTER_IV": "imgs/Emblem_Master_IV.png",
+    "GRANDMASTER_I": "imgs/Emblem_Grandmaster_I.png",
+    "GRANDMASTER_II": "imgs/Emblem_Grandmaster_II.png",
+    "GRANDMASTER_III": "imgs/Emblem_Grandmaster_III.png",
+    "GRANDMASTER_IV": "imgs/Emblem_Grandmaster_IV.png",
+    "CHALLENGER_I": "imgs/Emblem_Challenger_I.png",
+    "CHALLENGER_II": "imgs/Emblem_Challenger_II.png",
+    "CHALLENGER_III": "imgs/Emblem_Challenger_III.png",
+    "CHALLENGER_IV": "imgs/Emblem_Challenger_IV.png",
+    "UNRANKED": "imgs/Emblem_Unranked.png",
 }
 
 @app.route("/")
@@ -41,7 +68,10 @@ def showData():
     name = request.args.get('summoner')
     queue = request.args.get('queue')
     color = request.args.get('color')
-    data = define_map(get(region, name), queue)
+    if(queue == 'RANKED_TFT'):
+        data = define_map(getTFT(region, name), queue)
+    else:
+        data = define_map(get(region, name), queue)
     return render_template('template.html', data = data[queue], color = color)
 
 
@@ -60,12 +90,21 @@ def get(country, name):
     response = requestLink(url)
     return response
 
+def getTFT(country, name):
+    url = f"https://{links[country]}/lol/summoner/v4/summoners/by-name/{name}"
+    response = requestLink(url)
+    id = response["id"]
+    url = f"https://{links[country]}/tft/league/v1/entries/by-summoner/{id}"
+    response = requestLink(url)
+    return response
+
 def define_map(response, queue):
     lista = {}
     if(len(response) > 0):
+        print(response)
         for res in response:
             map = {
-                    "tier": images[res["tier"]],
+                    "tier": images[res["tier"] + "_" + res["rank"]],
                     "rank": res["rank"],
                     "leaguePoints": res["leaguePoints"],
                     "percentWin": float(res["wins"] / res["wins"] + res["losses"]),
