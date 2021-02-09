@@ -1,4 +1,4 @@
 # LolWitch
 A Flask application to show League of legends Status on Streams
 
-Use it on lol-witch.herokuapp.com
+Use it on http://lol-witch.herokuapp.com
