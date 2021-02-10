@@ -9,6 +9,10 @@ body {
 }
 
 .info {
+    border-radius: 20px;
+    border-style: groove;
+    border-width: 0.6ch;
+    margin: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
