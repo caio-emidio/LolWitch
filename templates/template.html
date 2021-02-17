@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="refresh" content="60">
@@ -10,60 +11,72 @@
             font-size: 2.2em;
             font-weight: 700;
             margin: 5px;
-            color: {{color}};
         }
     </style>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
+
 <body>
     <div class="lolwitch">
         <div class="images">
             <img id="badge" src="{{url_for('static', filename=data.tier)}}" />
         </div>
-        <div id="PDLs" class="info">
+        <div id="PDLs">
             <p>{{data.leaguePoints}} PDLs</p>
         </div>
     </div>
     <script>
-        var elementBadge = document.getElementById('badge');
-        var elementPDLs = document.getElementById('PDLs');
+        const params = Object.fromEntries(new URLSearchParams(location.search));
+        const elementP = document.getElementsByTagName('p')[0];
+        const elementBadge = document.getElementById('badge');
+        const elementPDLs = document.getElementById('PDLs');
+        elementP.style.color = params.color;
 
-        if(elementBadge.src.toLowerCase().includes('iron')){
-            elementPDLs.style.backgroundColor = "#5f5757";
-            elementPDLs.style.borderColor = "#575151";
+        if (params.hasBg == 'true') {
+            elementPDLs.classList.add("info");
+            checkTier();
         }
-        else if(elementBadge.src.toLowerCase().includes('silver')){
-            elementPDLs.style.backgroundColor = "#687c82";
-            elementPDLs.style.borderColor = "#62767b";
+        function checkTier() {
+            elementPDLs.classList.add("info")
+
+            if (elementBadge.src.toLowerCase().includes('iron')) {
+                elementPDLs.style.backgroundColor = "#5f5757";
+                elementPDLs.style.borderColor = "#575151";
+            }
+            else if (elementBadge.src.toLowerCase().includes('silver')) {
+                elementPDLs.style.backgroundColor = "#687c82";
+                elementPDLs.style.borderColor = "#62767b";
+            }
+            else if (elementBadge.src.toLowerCase().includes('gold')) {
+                elementPDLs.style.backgroundColor = "#ba782f";
+                elementPDLs.style.borderColor = "#1a6b30";
+            }
+            else if (elementBadge.src.toLowerCase().includes('diamond')) {
+                elementPDLs.style.backgroundColor = "#4d83b3";
+                elementPDLs.style.borderColor = "#da7bf7";
+            }
+            else if (elementBadge.src.toLowerCase().includes('platynum')) {
+                elementPDLs.style.backgroundColor = "#52908d";
+                elementPDLs.style.borderColor = "#332f35";
+            }
+            else if (elementBadge.src.toLowerCase().includes('_master')) {
+                elementPDLs.style.backgroundColor = "#b381d6";
+                elementPDLs.style.borderColor = "#592c2f";
+            }
+            else if (elementBadge.src.toLowerCase().includes('grandmaster')) {
+                elementPDLs.style.backgroundColor = "#c1b2bb";
+                elementPDLs.style.borderColor = "#cd1c22";
+            }
+            else if (elementBadge.src.toLowerCase().includes('challenger')) {
+                elementPDLs.style.backgroundColor = "#fbeedf";
+                elementPDLs.style.borderColor = "#fddb83";
+            }
+            else {
+                elementPDLs.style.backgroundColor = "#1e2328";
+                elementPDLs.style.borderColor = "#040d16";
+            }
         }
-        else if(elementBadge.src.toLowerCase().includes('gold')){
-            elementPDLs.style.backgroundColor = "#ba782f";
-            elementPDLs.style.borderColor = "#1a6b30";
-        }
-        else if(elementBadge.src.toLowerCase().includes('diamond')){
-            elementPDLs.style.backgroundColor = "#4d83b3";
-            elementPDLs.style.borderColor = "#da7bf7";
-        }
-        else if(elementBadge.src.toLowerCase().includes('platynum')){
-            elementPDLs.style.backgroundColor = "#52908d";
-            elementPDLs.style.borderColor = "#332f35";
-        }
-        else if(elementBadge.src.toLowerCase().includes('_master')){
-            elementPDLs.style.backgroundColor = "#b381d6";
-            elementPDLs.style.borderColor = "#592c2f";
-        }
-        else if(elementBadge.src.toLowerCase().includes('grandmaster')){
-            elementPDLs.style.backgroundColor = "#c1b2bb";
-            elementPDLs.style.borderColor = "#cd1c22";
-        }
-        else if(elementBadge.src.toLowerCase().includes('challenger')){
-            elementPDLs.style.backgroundColor = "#fbeedf";
-            elementPDLs.style.borderColor = "#fddb83";
-        }
-        else {
-            elementPDLs.style.backgroundColor = "#1e2328";
-            elementPDLs.style.borderColor = "#040d16";
-        }
+
     </script>
 </body>
 
