@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LoL Witch</title>
     <link rel="stylesheet" href="./../static/css/index.css">
-
 </head>
 
 <body>
@@ -57,18 +56,41 @@
                             </select>
                         </div>
                         <div class="formDivInput">
+                            <label for="bg">Background</label>
+                            <input id='bg' class="formInput" name="bg" type="button" value="ON" onclick="toggle(this)">
+                            <input id='hasBg' class="formInput" name="hasBg" type="text" style="display: none;">
+                        </div>
+                        <div class="formDivInput">
                             <label for="color">Color</label>
                             <input class="formInput color" name="color" type="color" value="#32D74B">
                         </div>
                     </div>
                 </div>
 
-                <button>Go!</button>
+                <button onclick="checkBG()">Go!</button>
 
             </form>
 
         </div>
+        <script>
+            function checkBG() {
+                const bg = document.getElementById("bg");
+                const bgText = document.getElementById("hasBg");
 
+                if (bg.value == 'ON') {
+                    bgText.value = true;
+                } else
+                    bgText.value = false;
+            }
+            function toggle(el) {
+                el.classList.toggle("off");
+                if (el.classList.contains('off')) {
+                    el.value = "OFF";
+                } else if (!el.classList.contains('off')) {
+                    el.value = "ON";
+                }
+            }
+        </script>
         <footer>
             <a href="https://www.twitch.tv/em1dio">Twitch: @Em1Dio</a>
             <a href="http://github.com/caio-emidio/">Github: caio-emidio</a>

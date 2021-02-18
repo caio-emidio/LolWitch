@@ -64,7 +64,11 @@ body {
     align-items: center;
     justify-content: center;
     padding-left: 10px;
+}
 
+.off{
+background-color: #B01717;
+initial-value: "OFF";
 }
 
 .region{

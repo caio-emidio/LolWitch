@@ -68,11 +68,12 @@ def showData():
     name = request.args.get('summoner')
     queue = request.args.get('queue')
     color = request.args.get('color')
+    hasBg = request.args.get('hasBg')
     if(queue == 'RANKED_TFT'):
         data = define_map(getTFT(region, name), queue)
     else:
         data = define_map(get(region, name), queue)
-    return render_template('template.html', data = data[queue], color = color)
+    return render_template('template.html', data = data[queue], color = color, hasBg = hasBg)
 
 
 def requestLink(url):
