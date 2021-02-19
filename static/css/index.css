@@ -66,6 +66,10 @@ body {
     padding-left: 10px;
 }
 
+.pRevert{
+    padding-left: revert;
+}
+
 .off{
 background-color: #B01717;
 initial-value: "OFF";
